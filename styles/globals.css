@@ -1,8 +1,10 @@
 :root {
 	--font-family: 'Noto Sans KR', sans-serif;
+	--gray-light:#EBEBEB;
 	--black: #3B434E;
 	--white:#FFFFFF;
 	--primary: #7653FC;
+	--primary-hover: #3a1ab9;	
 	--secondary: #787D85;
 	--red:#DE0000;
 	--orange:#FC836D;
