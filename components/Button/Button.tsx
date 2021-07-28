@@ -12,7 +12,7 @@ export const Button = ({children,arrow='none',appearance,className, ...props}:IB
             {children}
             {arrow !== 'none' && <span className={cn(styles.arrow,{
                 [styles.down]:arrow ==='down'
-            })}><Arrow /></span>}
+            })}><Arrow/></span>}
         </button>
     )
 };
