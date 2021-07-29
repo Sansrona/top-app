@@ -1,0 +1,8 @@
+.star svg{
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.filled svg{
+    fill: var(--primary);
+}
