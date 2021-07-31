@@ -1,0 +1,20 @@
+.footer{
+    background-color: var(--primary);
+    color:var(--white);
+    padding: 25px 35px;
+    display: grid;
+    gap: 10px 40px;
+    grid-template-columns: 1fr auto auto ;
+    line-height: 20px;
+}
+
+.footer a:hover{
+    color: var(--gray-light);
+}
+
+@media (max-width:768px){
+    .footer{
+        grid-template-columns: auto ;
+
+    }
+}
