@@ -11,6 +11,7 @@ export interface IMenuItems{
     _id:{
         secondCategory:string;
     };
+    isOpened?:boolean;
     pages:PageItem[];
 }
 
