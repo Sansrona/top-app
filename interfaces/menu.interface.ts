@@ -1,3 +1,5 @@
+import { TopPageLevel } from "./toppage.interface";
+
 export interface PageItem{
     alias: string;
     title: string;
@@ -10,4 +12,11 @@ export interface IMenuItems{
         secondCategory:string;
     };
     pages:PageItem[];
+}
+
+export interface IfirstLevelCategory{
+    name:string;
+    route:string;
+    icon:JSX.Element;
+    id:TopPageLevel;
 }

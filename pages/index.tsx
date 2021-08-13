@@ -22,9 +22,6 @@ function Home({ menu }:IHome): JSX.Element {
       <Tag size='m' color='red'>Button</Tag>
       <Tag size='m' color='green'>Button</Tag>
       <Tag size='m' color='gray'>Button</Tag>
-      <ul>
-        {menu.map(m=><li key={m._id.secondCategory}>{m._id.secondCategory}</li>)}
-      </ul>
       <Rating isEditable rating={rating} setRating={setRating}></Rating>
     </>
   );
@@ -34,7 +31,7 @@ export default withLayout(Home);
 
 export const getStaticProps: GetStaticProps<IHome> = async () => {
   const firstCategory = 0;
-  const { data: menu } = await axios.post<IMenuItems[]>(process.env.NEXT_PUBLIC_DOMAIN + 'https://courses-top.ru/api/top-page/find', {
+  const { data: menu } = await axios.post<IMenuItems[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
     firstCategory
   });
 

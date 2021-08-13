@@ -11,9 +11,6 @@ const firstCategory = 0;
 
 
 function Course({ menu,page,products }: ICourse): JSX.Element {
-    console.log('====================================');
-    console.log(page,products);
-    console.log('====================================');
     return (
         <>
     {products.length}
