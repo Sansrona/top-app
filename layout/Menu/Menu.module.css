@@ -35,6 +35,15 @@
     color: var(--gray-dark);
     cursor: pointer;
     text-transform:uppercase;
+    margin-bottom: 10px;
+}
+
+.secondLevelBlock{
+    display: none;
+}
+
+.secondLevelBlockActive{
+    display: block;
 }
 
 .thirdLevelMenu {
@@ -43,6 +52,7 @@
     font-size: 14px;
     line-height: 19px;
     color: var(--gray-dark);
+    margin-bottom: 10px;
 }
 
 .thirdLevelMenuActive,
