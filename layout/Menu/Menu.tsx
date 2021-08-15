@@ -2,21 +2,12 @@ import styles from './Menu.module.css';
 import React from 'react';
 import cn from "classnames";
 import { AppContext } from '../../context/app.context';
-import BooksIcon from './icons/books.svg';
-import ServicesIcon from './icons/services.svg';
-import ProductsIcon from './icons/products.svg';
-import CoursesIcon from './icons/courses.svg';
 import { IfirstLevelCategory, PageItem } from '../../interfaces/menu.interface';
-import { TopPageLevel } from '../../interfaces/toppage.interface';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { firstLevelCategory } from '../../helpers/helpers';
 
-const firstLevelCategory: IfirstLevelCategory[] = [
-    { route: 'courses', name: 'Курсы', icon: <CoursesIcon />, id: TopPageLevel.Courses },
-    { route: 'service', name: 'Сервисы', icon: <ServicesIcon />, id: TopPageLevel.Services },
-    { route: 'books', name: 'Книни', icon: <BooksIcon />, id: TopPageLevel.Books },
-    { route: 'products', name: 'Товары', icon: <ProductsIcon />, id: TopPageLevel.Products }
-];
+
 
 
 export const Menu = (): JSX.Element => {
