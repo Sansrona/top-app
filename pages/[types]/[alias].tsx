@@ -6,13 +6,11 @@ import { ProductModel } from '../../interfaces/product.interface';
 import { ParsedUrlQuery } from 'node:querystring';
 import { TopPageLevel, TopPageModel } from '../../interfaces/toppage.interface';
 import { firstLevelCategory } from '../../helpers/helpers';
+import TopPageComponent from '../../page-components/TopPageComponent';
 
 
-function Course({ menu, page, products }: ICourse): JSX.Element {
-    return (
-        <>
-        </>
-    );
+function Course({ page, products, firstCategory }: ICourse): JSX.Element {
+    return <TopPageComponent firstCategory={firstCategory} products={products} page={page} />
 }
 
 export default withLayout(Course);
