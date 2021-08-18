@@ -9,11 +9,11 @@ import { firstLevelCategory } from '../../helpers/helpers';
 import TopPageComponent from '../../page-components/TopPageComponent';
 
 
-function Course({ page, products, firstCategory }: ICourse): JSX.Element {
+function TopPage({ page, products, firstCategory }: ICourse): JSX.Element {
     return <TopPageComponent firstCategory={firstCategory} products={products} page={page} />
 }
 
-export default withLayout(Course);
+export default withLayout(TopPage);
 
 export const getStaticPaths: GetStaticPaths = async () => {
     let paths: string[] = [];
@@ -21,7 +21,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         const { data: menu } = await axios.post<IMenuItems[]>('https://courses-top.ru/api/top-page/find', {
             firstCategory: m.id
         });
-        paths = paths.concat(menu.flatMap(s => s.pages.map(page => `/${m.route}/${page.alias}`)));
+        paths = paths.concat(menu.flatMap(s => s.pages.map(p => `/${m.route}/${p.alias}`)));
     }
     return {
         paths,
@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps<ICourse> = async ({ params }: GetSta
         };
     }
 
-    const firstCategoryItem = firstLevelCategory.find(m => m.route === params.type);
+    const firstCategoryItem = firstLevelCategory.find(m => m.route === params.types);
     if (!firstCategoryItem) {
         return {
             notFound: true
@@ -59,6 +59,8 @@ export const getStaticProps: GetStaticProps<ICourse> = async ({ params }: GetSta
             limit: 10
         }
         );
+        console.log(products);
+
         return {
             props: {
                 menu,

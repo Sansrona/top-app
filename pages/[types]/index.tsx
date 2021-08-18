@@ -17,7 +17,7 @@ export default withLayout(Type);
 
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
-        paths:firstLevelCategory.map(m=>'/'+m.route),
+        paths:firstLevelCategory.map(m=>'/' + m.route),
         fallback: true,
     };
 };

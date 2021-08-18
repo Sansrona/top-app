@@ -1,0 +1,19 @@
+.container{
+    margin-top: 40px;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-items: start;
+    gap:20px
+}
+
+.hhWrapper{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-items: start;
+    gap:20px
+}

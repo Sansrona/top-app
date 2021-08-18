@@ -80,6 +80,7 @@ export const Menu = (): JSX.Element => {
                         <a className={cn(styles.thirdLevelMenu, {
                             [styles.thirdLevelMenuActive]: `/${route}/${p.alias}` === router.asPath
                         })}
+                        key={route+'/'+p.alias}
                         >{p.category}</a></Link>
                 ))}
             </>

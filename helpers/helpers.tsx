@@ -8,7 +8,7 @@ import { TopPageLevel } from '../interfaces/toppage.interface';
 
 export  const firstLevelCategory: IfirstLevelCategory[] = [
     { route: 'courses', name: 'Курсы', icon: <CoursesIcon />, id: TopPageLevel.Courses },
-    { route: 'service', name: 'Сервисы', icon: <ServicesIcon />, id: TopPageLevel.Services },
+    { route: 'services', name: 'Сервисы', icon: <ServicesIcon />, id: TopPageLevel.Services },
     { route: 'books', name: 'Книги', icon: <BooksIcon />, id: TopPageLevel.Books },
     { route: 'products', name: 'Товары', icon: <ProductsIcon />, id: TopPageLevel.Products }
 ];
