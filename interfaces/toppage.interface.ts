@@ -26,14 +26,14 @@ export interface TopPageModel {
     title: string;
     _id: string;
     category:string;
-    seoText: string;
+    seoText?: string;
     metaTitle: string;
     tagsTitle: string;
     metaDescription: string
     firstCategory:TopPageLevel;
-    advantage: TopPageAdvantage[];
+    advantages?: TopPageAdvantage[];
     createdAt : Date;
     updatedAt : Date;
     _v:number;
-    hh:HhData;
+    hh?:HhData;
 }

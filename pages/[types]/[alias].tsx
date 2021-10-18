@@ -10,7 +10,7 @@ import TopPageComponent from '../../page-components/TopPageComponent';
 
 
 function TopPage({ page, products, firstCategory }: ICourse): JSX.Element {
-    return <TopPageComponent firstCategory={firstCategory} products={products} page={page} />
+    return <TopPageComponent firstCategory={firstCategory} products={products} page={page} />;
 }
 
 export default withLayout(TopPage);

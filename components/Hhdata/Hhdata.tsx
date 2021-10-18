@@ -1,10 +1,11 @@
 import React from 'react';
+import { makeRub } from '../../helpers/helpers';
 import { Card } from '../Card/Card';
 import styles from './Hddata.module.css';
 import { IHhdata } from './Hhdata.props';
 import RateIcon from './rate.svg';
 
-function Hhdata({ juniorSalary, middleSalary, seniorSalary, count }: IHhdata): JSX.Element {
+export function Hhdata({ juniorSalary, middleSalary, seniorSalary, count }: IHhdata): JSX.Element {
     return (
         <div className={styles.hhdata}>
             <Card className={styles.count}>
@@ -14,7 +15,7 @@ function Hhdata({ juniorSalary, middleSalary, seniorSalary, count }: IHhdata): J
             <Card className={styles.salary}>
                 <div>
                     <div className={styles.title}>Начальный</div>
-                    <div className={styles.salaryValue}>{juniorSalary}</div>
+                    <div className={styles.salaryValue}>{makeRub(juniorSalary)}</div>
                     <div className={styles.rating}>
                         <RateIcon className={styles.filled} />
                         <RateIcon />
@@ -23,7 +24,7 @@ function Hhdata({ juniorSalary, middleSalary, seniorSalary, count }: IHhdata): J
                 </div>
                 <div>
                     <div className={styles.title}>Средний</div>
-                    <div className={styles.salaryValue}>{middleSalary}</div>
+                    <div className={styles.salaryValue}>{makeRub(middleSalary)}</div>
                     <div className={styles.rating}>
                         <RateIcon className={styles.filled}/>
                         <RateIcon className={styles.filled}/>
@@ -32,7 +33,7 @@ function Hhdata({ juniorSalary, middleSalary, seniorSalary, count }: IHhdata): J
                 </div>
                 <div>
                     <div className={styles.title}>Профессионал</div>
-                    <div className={styles.salaryValue}>{seniorSalary}</div>
+                    <div className={styles.salaryValue}>{makeRub(seniorSalary)}</div>
                     <div className={styles.rating}>
                         <RateIcon className={styles.filled}/>
                         <RateIcon className={styles.filled}/>
@@ -43,5 +44,3 @@ function Hhdata({ juniorSalary, middleSalary, seniorSalary, count }: IHhdata): J
         </div>
     );
 }
-
-export default Hhdata;

@@ -1,16 +1,18 @@
 :root {
 	--font-family: 'Roboto', sans-serif;
-	--gray-light:#EBEBEB;
-	--gray-dark:#787D85;
+	--gray-light: #EBEBEB;
+	--gray: #A4A4A4;
+	--gray-dark: #787D85;
 	--black: #3B434E;
-	--white:#FFFFFF;
+	--white: #FFFFFF;
 	--primary: #7653FC;
-	--primary-hover: #3a1ab9;	
+	--primary-hover: #3a1ab9;
 	--secondary: #787D85;
-	--red:#DE0000;
-	--orange:#FC836D;
-	--green:#1DC37E;
-	--green-light:#C8F8E4;;
+	--red: #DE0000;
+	--orange: #FC836D;
+	--green: #1DC37E;
+	--green-light: #C8F8E4;
+	;
 }
 
 html,

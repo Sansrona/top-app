@@ -12,3 +12,5 @@ export  const firstLevelCategory: IfirstLevelCategory[] = [
     { route: 'books', name: 'Книги', icon: <BooksIcon />, id: TopPageLevel.Books },
     { route: 'products', name: 'Товары', icon: <ProductsIcon />, id: TopPageLevel.Products }
 ];
+
+export const makeRub = (value:number):string => value.toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ').concat(' ₽');

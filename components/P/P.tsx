@@ -8,5 +8,5 @@ export const P = ({ children='medium', font, ...props }: IP): JSX.Element => {
         [styles.small]: font === '14',
         [styles.medium]: font === '16',
         [styles.large]: font === '18',
-    })} {...props}> { children }</p >
-}
+    })} {...props}> { children }</p >;
+};

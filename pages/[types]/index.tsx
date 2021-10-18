@@ -1,5 +1,4 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
-import { useState } from 'react';
 import axios from 'axios';
 import { withLayout } from '../../layout/Layout';
 import { IMenuItems } from '../../interfaces/menu.interface';
