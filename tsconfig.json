@@ -24,7 +24,7 @@
     "svg.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "helpers/helpers.tsxx"  ],
   "exclude": [
     "node_modules"
   ]

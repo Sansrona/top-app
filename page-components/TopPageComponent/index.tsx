@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import {ITopPageComponent} from './TopPageComponent.props';
 import styles from './TopPageComponent.module.css';
-import { Htag, Tag, Hhdata,Advantages, Sort } from '../../components';
+import { Htag, Tag, Hhdata,Advantages, Sort, ProductBlock } from '../../components';
 import { TopPageLevel } from '../../interfaces/toppage.interface';
 import { SortEnum } from '../../components/Sort/Sort.props';
 import { sortReducer } from '../../components/Sort/sort.reducer';
@@ -15,14 +15,14 @@ function TopPageComponent({products, firstCategory,page}:ITopPageComponent): JSX
 
     return (
         <div className={styles.container}>
-            <div className={styles.wrapper}>
+            <div className={styles.title}>
                 <Htag tag='h2'>{page.title}</Htag>
                 <Tag size='m' color='gray'>{products.length}</Tag>
                 <Sort sort={sort} setSort={setSort} />
             </div>
-            {sortedProducts && sortedProducts.map(p=>(<div key={p.title}>
-                {p.title}
-            </div>))}
+            <div>
+                {sortedProducts && sortedProducts.map(p=><ProductBlock key={p._id} product={p} />)}
+            </div>              
             <div className={styles.hhWrapper}>
                 <Htag tag='h2'>Вакансии - {page.category}</Htag>
                 <Tag size='m' color='red'>hh.ru</Tag>

@@ -3,8 +3,8 @@ import cn from 'classnames';
 import styles from './Tag.module.css';
 
 
-export const Tag = ({ children = 'medium', size, href, color, ...props }: ITag): JSX.Element => {
-    return <div className={cn(styles.tag,{
+export const Tag = ({ children, size='s', className, href, color='ghost', ...props }: ITag): JSX.Element => {
+    return <div className={cn(styles.tag,className,{
         [styles.small]: size === 's',
         [styles.medium]: size === 'm',
         [styles.gray]: color === 'gray',

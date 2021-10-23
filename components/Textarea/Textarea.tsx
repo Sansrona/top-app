@@ -1,6 +1,6 @@
 import { TextareaProps } from "./Textarea.props";
 import cn from 'classnames';
-import styles from './Input.module.css';
+import styles from './Textarea.module.css';
 
 
 export const Textarea = ({className ,...props}: TextareaProps): JSX.Element => {

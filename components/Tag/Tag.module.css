@@ -7,14 +7,12 @@
 
 .small {
     padding: 5px 10px;
-    font-weight: 500;
     font-size: 12px;
     line-height: 12px;
 }
 
 .medium {
     padding: 5px 10px;
-    font-weight: 600;
     font-size: 14px;
     line-height: 14px;
 }
