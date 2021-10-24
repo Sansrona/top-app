@@ -3,12 +3,15 @@ import cn from 'classnames';
 import styles from './Product.module.css';
 import React from "react";
 import Image from 'next/image';
-import { Button, Card, Divider, Rating, Tag } from "..";
+import { Button, Card, Divider, Rating, Review, Tag } from "..";
 import {delvOfNumber, makeRub} from '../../helpers/helpers';
 
 
 export const ProductBlock = ({ product,...props }: ProductProps): JSX.Element => {
+    const [isReviewOpen, setReviewOpen]= React.useState<boolean>(false);
+    
     return (
+        <>
         <Card className={styles.product}>
             <div className={styles.logo}>
                 <Image
@@ -56,8 +59,25 @@ export const ProductBlock = ({ product,...props }: ProductProps): JSX.Element =>
             <Divider className={cn(styles.hr, styles.hr2)} />
             <div className={styles.actions}>
                 <Button appearance='primary'>Узнать подробнее</Button>
-                <Button className={styles.reviewButton} appearance='ghost' arrow='right'>Читать отзывы</Button>
+                <Button 
+                className={styles.reviewButton} 
+                appearance='ghost'
+                arrow={isReviewOpen?'down':'right'}
+                onClick={()=>setReviewOpen(!isReviewOpen)}
+                >Читать отзывы</Button>
             </div>
         </Card>
+        <Card color='blue' className={cn(styles.reviews, {
+            [styles.open]: isReviewOpen,
+            [styles.closed]: !isReviewOpen,
+        })}>
+            {product.reviews.map(r=>(
+                <>
+                    <Review key={r._id} review={r}/>
+                    <Divider />
+                </>
+))}
+        </Card>
+        </>
     );
 };
