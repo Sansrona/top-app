@@ -3,7 +3,7 @@ import cn from 'classnames';
 import styles from './Product.module.css';
 import React from "react";
 import Image from 'next/image';
-import { Button, Card, Divider, Rating, Review, Tag } from "..";
+import { Button, Card, Divider, Rating, Review, ReviewForm, Tag } from "..";
 import {delvOfNumber, makeRub} from '../../helpers/helpers';
 
 
@@ -76,7 +76,8 @@ export const ProductBlock = ({ product,...props }: ProductProps): JSX.Element =>
                     <Review key={r._id} review={r}/>
                     <Divider />
                 </>
-))}
+))} 
+        <ReviewForm productId={product._id}/>
         </Card>
         </>
     );
