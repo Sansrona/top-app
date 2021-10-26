@@ -8,7 +8,7 @@ import { Controller, useForm } from "react-hook-form";
 import { IReviewForm } from "./ReviewForm.interface";
 
 export const ReviewForm = ({ className, productId, ...props }: ReviewFormProps): JSX.Element => {
-    const {register, control, handleSubmit} = useForm<IReviewForm>();
+    const {register, control, handleSubmit, formState: {errors}} = useForm<IReviewForm>();
     
     const submitForm = (data:IReviewForm)=>{
         console.log(data);
@@ -18,8 +18,16 @@ export const ReviewForm = ({ className, productId, ...props }: ReviewFormProps):
     return (
         <form onSubmit={handleSubmit(submitForm)}>
         <div className={cn(styles.reviewForm, className)} {...props}>
-            <Input {...register('name')} placeholder='Имя' />
-            <Input {...register('title')} className={styles.title} placeholder='Заголовок отзыва'/>
+            <Input 
+                {...register('name',{required:{value:true, message:'Заполните ваше имя'}})} 
+                placeholder='Имя'
+                error={errors.name}
+                />
+            <Input 
+            {...register('title',{required:{value:true, message:'Заполните заголовок'}})} 
+            className={styles.title} 
+            error={errors.title}
+            placeholder='Заголовок отзыва'/>
             <div className={styles.rating}>
                 <span>Оценка:</span>
                 <Controller
@@ -28,7 +36,11 @@ export const ReviewForm = ({ className, productId, ...props }: ReviewFormProps):
                     <Rating isEditable setRating={field.onChange} ref={field.ref} rating={field.value}/>
                 )}/>
             </div>
-            <Textarea {...register('description')} className={styles.placeholder} placeholder='Текст отзыва'/>
+            <Textarea 
+                {...register('description',{required:{value:true, message:'Заполните описание'}})} 
+                className={styles.placeholder} 
+                error={errors.description}
+                placeholder='Текст отзыва'/>
             <div className={styles.submit}>
                 <Button appearance='primary'>Отправить</Button>
                 <span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
