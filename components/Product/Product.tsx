@@ -7,11 +7,20 @@ import { Button, Card, Divider, Rating, Review, ReviewForm, Tag } from "..";
 import {delvOfNumber, makeRub} from '../../helpers/helpers';
 
 
-export const ProductBlock = ({ product,...props }: ProductProps): JSX.Element => {
+export const ProductBlock = ({ product,className,...props }: ProductProps): JSX.Element => {
     const [isReviewOpen, setReviewOpen]= React.useState<boolean>(false);
-    
+    const reviewRef = React.useRef<HTMLDivElement>(null);
+
+    const scrollToReview = () => {
+        setReviewOpen(true);
+        reviewRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block:'start'
+        });
+    };
+
     return (
-        <>
+        <div className={className} {...props}>
         <Card className={styles.product}>
             <div className={styles.logo}>
                 <Image
@@ -34,7 +43,7 @@ export const ProductBlock = ({ product,...props }: ProductProps): JSX.Element =>
             <div className={styles.tags}>{product.tags.map(tag=><Tag key={tag} className={styles.category} color='ghost'>{tag}</Tag>)}</div>
             <div className={styles.priceTitle}>цена</div>
             <div className={styles.creditTitle}>кредит</div>
-            <div className={styles.rateTitle}>{product.reviewCount} {delvOfNumber(product.reviewCount, ['отзыв', 'отзыва','отзывов'])}</div>
+            <div className={styles.rateTitle}><a href='#ref' onClick={scrollToReview}>{product.reviewCount} {delvOfNumber(product.reviewCount, ['отзыв', 'отзыва','отзывов'])}</a></div>
             <Divider className={styles.hr} />
             <div className={styles.description}>{product.description} </div>
             <div className={styles.feature}>
@@ -67,7 +76,7 @@ export const ProductBlock = ({ product,...props }: ProductProps): JSX.Element =>
                 >Читать отзывы</Button>
             </div>
         </Card>
-        <Card color='blue' className={cn(styles.reviews, {
+        <Card color='blue' ref={reviewRef} className={cn(styles.reviews, {
             [styles.open]: isReviewOpen,
             [styles.closed]: !isReviewOpen,
         })}>
@@ -79,6 +88,6 @@ export const ProductBlock = ({ product,...props }: ProductProps): JSX.Element =>
 ))} 
         <ReviewForm productId={product._id}/>
         </Card>
-        </>
+        </div>
     );
 };
