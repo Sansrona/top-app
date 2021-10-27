@@ -5,7 +5,7 @@ import Star from './star.svg';
 import styles from './Rating.module.css';
 
 
-export const Rating = forwardRef(({ isEditable = false, rating, setRating, ...props }: IRating, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
+export const Rating = forwardRef(({ isEditable = false, error, rating, setRating, ...props }: IRating, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
     useEffect(() => {
@@ -47,7 +47,12 @@ export const Rating = forwardRef(({ isEditable = false, rating, setRating, ...pr
         setRating(i);
     };
 
-    return <div {...props} ref={ref}>
+    return (
+        <div {...props} ref={ref} className={styles.ratingWrapper}>
+        <div className={error && styles.error} >
         {ratingArray.map((r: JSX.Element, i: number) => <span key={i}>{r}</span>)}
-    </div>;
+        </div>
+        {error && <span className={styles.errorMessage}>{error.message}</span>}
+        </div>
+    );
 });

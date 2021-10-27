@@ -4,6 +4,7 @@ import { withLayout } from '../../layout/Layout';
 import { IMenuItems } from '../../interfaces/menu.interface';
 import { firstLevelCategory } from '../../helpers/helpers';
 import { ParsedUrlQuery } from 'node:querystring';
+import { API } from '../../helpers/api';
 
 function Type({firstCategory}:IType): JSX.Element {
   return (
@@ -33,7 +34,7 @@ export const getStaticProps: GetStaticProps<IType> = async ({ params }: GetStati
             notFound:true
         };
     }
-  const { data: menu } = await axios.post<IMenuItems[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
+  const { data: menu } = await axios.post<IMenuItems[]>(API.topPage.find, {
     firstCategory:firstCategoryItem.id
   });
 

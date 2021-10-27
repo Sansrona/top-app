@@ -1,18 +1,31 @@
 import { ReviewFormProps } from "./ReviewForm.props";
 import cn from 'classnames';
 import styles from './ReviewForm.module.css';
-import React from "react";
+import React, { useState } from "react";
 import { Button, Input, Rating, Textarea } from "..";
 import CloseIcon from './close.svg';
 import { Controller, useForm } from "react-hook-form";
-import { IReviewForm } from "./ReviewForm.interface";
+import { IReviewForm, IReviewResponse } from "./ReviewForm.interface";
+import axios from "axios";
+import { API } from "../../helpers/api";
 
 export const ReviewForm = ({ className, productId, ...props }: ReviewFormProps): JSX.Element => {
-    const {register, control, handleSubmit, formState: {errors}} = useForm<IReviewForm>();
-    
-    const submitForm = (data:IReviewForm)=>{
-        console.log(data);
-        
+    const {register, control, handleSubmit, formState: {errors}, reset} = useForm<IReviewForm>();
+    const [isSuccess,setIsSuccess] = useState<boolean>(false);
+    const [error, setError] = useState<string>();
+
+    const submitForm = async (formData:IReviewForm)=>{
+        try{
+            const {data} = await axios.post<IReviewResponse>(API.review.createDemo, {...formData, productId});        
+                if(data.message){
+                    setIsSuccess(true);
+                    reset();    
+                } else {
+                    setError('Что-то пошло не так');
+                }
+        } catch (e){
+                setError((e as Error).message);
+        }
     };
 
     return (
@@ -31,9 +44,11 @@ export const ReviewForm = ({ className, productId, ...props }: ReviewFormProps):
             <div className={styles.rating}>
                 <span>Оценка:</span>
                 <Controller
-                 control={control}
-                  name="rating" render={({field})=>(
-                    <Rating isEditable setRating={field.onChange} ref={field.ref} rating={field.value}/>
+                    control={control}
+                    name="rating"
+                    rules={{required:{value:true, message:'Оцените курс'}}}
+                    render={({field})=>(
+                        <Rating error={errors.rating} isEditable setRating={field.onChange} ref={field.ref} rating={field.value}/>
                 )}/>
             </div>
             <Textarea 
@@ -46,11 +61,15 @@ export const ReviewForm = ({ className, productId, ...props }: ReviewFormProps):
                 <span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
             </div>
         </div>
-        <div className={styles.success}>
+        {isSuccess && <div className={cn(styles.success, styles.panel)}>
             <div className={styles.successTitle}>Ваш отзыв отправлен</div>
             <div className={styles.success}>Спасибо, ваш отзыв будет опубликован после проверки</div>
-            <CloseIcon className={styles.closeIcon} />
-        </div>
+            <CloseIcon className={styles.closeIcon} onClick={()=>{setIsSuccess(false);}}  />
+        </div>}
+        {error && <div className={cn(styles.error, styles.panel)}>
+        Что-то пошло не так, перезагрузите страницу
+           <CloseIcon className={styles.closeIcon}  onClick={()=>{setError(undefined);}}/>
+        </div>}
         </form>
     );
 };
