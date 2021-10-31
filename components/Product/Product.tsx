@@ -1,13 +1,14 @@
 import { ProductProps } from "./Product.props";
 import cn from 'classnames';
 import styles from './Product.module.css';
-import React from "react";
+import React, { ForwardedRef, forwardRef } from "react";
 import Image from 'next/image';
 import { Button, Card, Divider, Rating, Review, ReviewForm, Tag } from "..";
 import {delvOfNumber, makeRub} from '../../helpers/helpers';
+import {motion} from 'framer-motion';
 
 
-export const ProductBlock = ({ product,className,...props }: ProductProps): JSX.Element => {
+export const ProductBlock = motion(forwardRef(({ product,className,...props }: ProductProps, ref:ForwardedRef<HTMLDivElement>): JSX.Element => {
     const [isReviewOpen, setReviewOpen]= React.useState<boolean>(false);
     const reviewRef = React.useRef<HTMLDivElement>(null);
 
@@ -90,4 +91,4 @@ export const ProductBlock = ({ product,className,...props }: ProductProps): JSX.
         </Card>
         </div>
     );
-};
+}));

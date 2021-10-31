@@ -34,17 +34,18 @@
     line-height: 16px;
     color: var(--gray-dark);
     cursor: pointer;
-    text-transform:uppercase;
+    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
-.secondLevelBlock{
-    display: none;
+.secondLevelBlock {
+    overflow: hidden;
+
+    padding: 0;
+
+    list-style: none;
 }
 
-.secondLevelBlockActive{
-    display: block;
-}
 
 .thirdLevelMenu {
     display: block;
@@ -56,6 +57,6 @@
 }
 
 .thirdLevelMenuActive,
-.thirdLevelMenu:hover{
+.thirdLevelMenu:hover {
     color: var(--primary);
 }

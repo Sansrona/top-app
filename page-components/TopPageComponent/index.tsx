@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import {ITopPageComponent} from './TopPageComponent.props';
 import styles from './TopPageComponent.module.css';
 import { Htag, Tag, Hhdata,Advantages, Sort, ProductBlock } from '../../components';
@@ -13,6 +13,10 @@ function TopPageComponent({products, firstCategory,page}:ITopPageComponent): JSX
         dispatch({type: sort});
     };
 
+    useEffect(()=>{
+        dispatch({type:'reset', initialState:products});
+    },[products]);
+
     return (
         <div className={styles.container}>
             <div className={styles.title}>
@@ -21,7 +25,7 @@ function TopPageComponent({products, firstCategory,page}:ITopPageComponent): JSX
                 <Sort sort={sort} setSort={setSort} />
             </div>
             <div>
-                {sortedProducts && sortedProducts.map(p=><ProductBlock key={p._id} product={p} />)}
+                {sortedProducts && sortedProducts.map(p=><ProductBlock layout key={p._id} product={p} />)}
             </div>              
             <div className={styles.hhWrapper}>
                 <Htag tag='h2'>Вакансии - {page.category}</Htag>
