@@ -144,15 +144,9 @@
     margin-bottom: 5px;
 }
 
-.open{
-    max-height: auto;
-    padding: 30px;
-}
-
-.closed {
+.reviews{
     overflow: hidden;
-    max-height: 0px;
-    padding: 0;
+    padding: 30px;
 }
 
 .rateTitle a{
