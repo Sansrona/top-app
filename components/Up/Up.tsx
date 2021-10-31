@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { ButtonIcon } from '..';
 import { useScrollY } from '../../hooks/useScrollY';
 import styles from './Up.module.css';
 import UpIcon from './up.svg';
@@ -23,11 +24,11 @@ export const Up = (): JSX.Element => {
         });
     };
 
-    return <motion.button 
+    return (
+    <motion.div 
     animate={controls}
-    onClick={scrollTop}
     initial={{opacity:0}}
     className={styles.up}>
-        <UpIcon />
-    </motion.button>;
+        <ButtonIcon appearance='primary' icon='up' onClick={scrollTop}/>
+    </motion.div>);
 };
