@@ -1,3 +1,4 @@
+
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import { IMenuItems } from '../interfaces/menu.interface';
@@ -6,7 +7,6 @@ import axios from 'axios';
 import { API } from '../helpers/api';
 
 function Search({ menu }:IHome): JSX.Element {
-  const [rating, setRating] = useState<number>(4);
   return (
     <h1>hi there</h1>
      

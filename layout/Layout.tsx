@@ -31,7 +31,7 @@ const Layout = ({ children }: ILayout): JSX.Element => {
             >Перейти к содержанию</a>
             <Header className={styles.header}/>
             <Sidebar className={styles.sidebar} />
-            <div className={styles.body} ref={bodyRef} tabIndex={0}>{children}</div>
+            <main role='main' className={styles.body} ref={bodyRef} tabIndex={0}>{children}</main>
             <Footer className={styles.footer}/>
             <Up />
         </div>

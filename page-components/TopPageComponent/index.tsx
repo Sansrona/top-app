@@ -21,7 +21,7 @@ function TopPageComponent({products, firstCategory,page}:ITopPageComponent): JSX
         <div className={styles.container}>
             <div className={styles.title}>
                 <Htag tag='h2'>{page.title}</Htag>
-                <Tag size='m' color='gray'>{products.length}</Tag>
+                <Tag size='m' color='gray' aria-label={products.length+' элементов'}>{products.length}</Tag>
                 <Sort sort={sort} setSort={setSort} />
             </div>
             <div>

@@ -34,3 +34,10 @@ a {
 * {
 	box-sizing: border-box;
 }
+
+.visuallyHidden{
+	width:0;
+	height:0;
+	position: absolute;
+	overflow:hidden;
+}
