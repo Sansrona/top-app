@@ -18,7 +18,7 @@ const Layout = ({ children }: ILayout): JSX.Element => {
             bodyRef.current?.focus();
         }
         setIsSkipLinkDisplayed(false);
-    }
+    };
     return (
         <div className={styles.wrapper}>
             <a 

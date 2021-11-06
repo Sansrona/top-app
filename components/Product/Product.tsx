@@ -88,6 +88,7 @@ export const ProductBlock = motion(forwardRef(({ product,className,...props }: P
                 className={styles.reviewButton} 
                 appearance='ghost'
                 arrow={isReviewOpen?'down':'right'}
+                aria-expanded={isReviewOpen}
                 onClick={()=>setReviewOpen(!isReviewOpen)}
                 >Читать отзывы</Button>
             </div>
