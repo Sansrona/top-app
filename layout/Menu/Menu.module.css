@@ -20,12 +20,18 @@
     fill: var(--primary);
 }
 
+.firstLevelList{
+    list-style: none;
+    padding: 0;
+}
+
 
 .secondLevel {
     margin-top: 22px;
     margin-left: 34px;
-    padding-left: 32px;
+    padding: 0 0 0 32px;
     border-left: 1px solid #DFDFDF;
+    list-style: none;
 }
 
 .secondLevelMenu {
@@ -36,6 +42,9 @@
     cursor: pointer;
     text-transform: uppercase;
     margin-bottom: 10px;
+    background: none;
+    border:none;
+    padding: 0;
 }
 
 .secondLevelBlock {

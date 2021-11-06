@@ -24,8 +24,8 @@ function TopPageComponent({products, firstCategory,page}:ITopPageComponent): JSX
                 <Tag size='m' color='gray' aria-label={products.length+' элементов'}>{products.length}</Tag>
                 <Sort sort={sort} setSort={setSort} />
             </div>
-            <div>
-                {sortedProducts && sortedProducts.map(p=><ProductBlock layout key={p._id} product={p} />)}
+            <div role='list'>
+                {sortedProducts && sortedProducts.map(p=><ProductBlock role='listitem' layout key={p._id} product={p} />)}
             </div>              
             <div className={styles.hhWrapper}>
                 <Htag tag='h2'>Вакансии - {page.category}</Htag>
