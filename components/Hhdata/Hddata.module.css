@@ -1,82 +1,87 @@
 .hhdata {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 20px;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: 20px;
 }
 
 .count {
-    padding: 20px;
-    text-align: center;
+	padding: 20px;
+
+	text-align: center;
 }
 
 .salary {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
-    gap:20px 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 
+	padding: 20px;
+	gap: 20px 0;
 }
 
-.salary>div {
-    border-right: 1px solid var(--gray-light);
-    text-align: center;
+.salary > div {
+	text-align: center;
+
+	border-right: 1px solid var(--gray-light);
 }
 
-.salary>div:last-of-type {
-    border: none;
+.salary > div:last-of-type {
+	border: none;
 }
 
 .title {
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 27px;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 27px;
 }
 
 .countValue {
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 49px;
-    color: var(--primary);
+	color: var(--primary);
+
+	font-size: 36px;
+	font-weight: bold;
+	line-height: 49px;
 }
 
 .salaryValue {
-    font-weight: bold;
-    font-size: 26px;
-    line-height: 35px;
+	font-size: 26px;
+	font-weight: bold;
+	line-height: 35px;
 }
 
-.rating{
-    display: grid;
-    grid-template-columns: repeat(3, 20px);
-    gap: 10px;
-    justify-content: center;
-    margin-top: 12px;
+.rating {
+	display: grid;
+	grid-template-columns: repeat(3, 20px);
+	gap: 10px;
+
+	justify-content: center;
+
+	margin-top: 12px;
 }
 
-.filled circle{
-    fill:var(--orange);
+.filled circle {
+	fill: var(--orange);
 }
 
-@media (max-width: 1024px){
-    .hhdata{
-        grid-template-columns: 1fr;
-
-    }
+@media (max-width: 1024px) {
+	.hhdata {
+		grid-template-columns: 1fr;
+	}
 }
 
+@media (max-width: 660px) {
+	.salary {
+		grid-template-columns: 1fr;
+	}
 
-@media (max-width: 660px){
-    .salary {
-        grid-template-columns: 1fr;
-    }
-    
-    .salary>div {
-        border-bottom: 1px solid var(--gray-light);
-        padding-bottom: 20px;
-    }
-    
-    .salary>div:last-of-type {
-        border: none;
-        padding: 0;
-    }
+	.salary > div {
+		padding-bottom: 20px;
+
+		border-bottom: 1px solid var(--gray-light);
+	}
+
+	.salary > div:last-of-type {
+		padding: 0;
+
+		border: none;
+	}
 }

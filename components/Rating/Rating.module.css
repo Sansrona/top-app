@@ -1,27 +1,29 @@
-.star{
-    display: inline-block;
+.star {
+	display: inline-block;
 }
 
-.star svg{
-    cursor: pointer;
-    margin-right: 5px;
+.star svg {
+	margin-right: 5px;
+
+	cursor: pointer;
 }
 
-.filled svg{
-    fill: var(--primary);
+.filled svg {
+	fill: var(--primary);
 }
 
-.error svg{
-    stroke:var(--red)
+.error svg {
+	stroke: var(--red);
 }
 
-.ratingWrapper{
-    position: relative;
+.ratingWrapper {
+	position: relative;
 }
 
-.errorMessage{
-    position: absolute;
-    left: 0;
-    bottom: -20px;
-    color:var(--red);
+.errorMessage {
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+
+	color: var(--red);
 }

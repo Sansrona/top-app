@@ -2,27 +2,29 @@
 	--font-family: 'Roboto', sans-serif;
 	--gray-light: #EBEBEB;
 	--gray: #A4A4A4;
-	--gray-dark: #6c7077;
+	--gray-dark: #6C7077;
 	--black: #3B434E;
-	--white: #FFFFFF;
-	--primary: #7351f5;
-	--primary-hover: #3a1ab9;
+	--white: #FFF;
+	--primary: #7351F5;
+	--primary-hover: #3A1AB9;
 	--secondary: #787D85;
-	--red-light:#fea291;
+	--red-light: #FEA291;
 	--red: #DE0000;
 	--orange: #FC836D;
-	--green: #007b48;
+	--green: #007B48;
 	--green-light: #C8F8E4;
-	;
+	
 }
 
 html,
 body {
 	margin: 0;
 	padding: 0;
+
 	color: var(--black);
-	font-family: var(--font-family);
 	background-color: #E5E5E5;
+
+	font-family: var(--font-family);
 }
 
 a {
@@ -35,9 +37,11 @@ a {
 	box-sizing: border-box;
 }
 
-.visuallyHidden{
-	width:0;
-	height:0;
+.visuallyHidden {
 	position: absolute;
-	overflow:hidden;
+
+	overflow: hidden;
+
+	width: 0;
+	height: 0;
 }

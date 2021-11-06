@@ -1,83 +1,84 @@
 .reviewForm {
-    font-size: 14px;
-    line-height: 24px;
-    display: grid;
-    grid-template-columns: [start] auto 1fr auto [end];
-    gap: 20px 30px;
-    align-items: center;
+	display: grid;
+	align-items: center;
+
+	font-size: 14px;
+	line-height: 24px;
+	grid-template-columns: [start] auto 1fr auto [end];
+	gap: 20px 30px;
 }
 
 .title {
-    justify-self: start;
+	justify-self: start;
 }
 
 .placeholder,
 .submit {
-    grid-column: start/end;
+	grid-column: start/end;
 }
 
 .info {
-    margin-left: 15px;
+	margin-left: 15px;
 }
 
 .rating {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 20px;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 20px;
 }
 
 .panel {
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    position: relative;
+	position: relative;
+
+	margin-top: 20px;
+	padding: 20px;
+
+	border-radius: 5px;
 }
 
 .error {
-    background-color: var(--red-light);
+	background-color: var(--red-light);
 }
 
 .success {
-    background-color: var(--green-light);
+	background-color: var(--green-light);
 }
 
 .successTitle {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .closeIcon {
-    position: absolute;
-    cursor: pointer;
-    top: 20px;
-    right: 20px;
-    border:none;
-    background:none;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+
+	cursor: pointer;
+
+	border: none;
+	background: none;
 }
 
-.error .closeIcon path{
-    stroke: var(--red);
+.error .closeIcon path {
+	stroke: var(--red);
 }
 
-@media screen and (max-width:1100px) {
-    .reviewForm {
-        grid-template-columns: [start] 1fr 1fr [end];
+@media screen and (max-width: 1100px) {
+	.reviewForm {
+		grid-template-columns: [start] 1fr 1fr [end];
+	}
 
-    }
+	.rating {
+		grid-column: start/end;
+	}
 
-    .rating {
-        grid-column: start/end;
-    }
-
-    .title {
-        justify-self: normal;
-    }
+	.title {
+		justify-self: normal;
+	}
 }
 
-
-@media screen and (max-width:640px) {
-    .reviewForm {
-        grid-template-columns: [start] 1fr [end];
-    }
-
-
+@media screen and (max-width: 640px) {
+	.reviewForm {
+		grid-template-columns: [start] 1fr [end];
+	}
 }

@@ -8,10 +8,23 @@ import { TopPageLevel, TopPageModel } from '../../interfaces/toppage.interface';
 import { firstLevelCategory } from '../../helpers/helpers';
 import TopPageComponent from '../../page-components/TopPageComponent';
 import { API } from '../../helpers/api';
+import Head from 'next/head';
 
 
 function TopPage({ page, products, firstCategory }: ICourse): JSX.Element {
-    return <TopPageComponent firstCategory={firstCategory} products={products} page={page} />;
+    return <>
+    <Head>
+        <title>{page.title}</title>
+        <meta name='description' content={page.metaDescription} />
+        <meta property="og:title" content={page.title} />
+        <meta property="og:description" content={page.metaDescription} />
+        <meta property="type" content="article" />
+    </Head>
+    <TopPageComponent 
+    firstCategory={firstCategory} 
+    products={products} 
+    page={page} />
+    </>;
 }
 
 export default withLayout(TopPage);
