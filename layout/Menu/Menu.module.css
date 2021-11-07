@@ -12,8 +12,8 @@
 	gap: 20px;
 }
 
-.firstLevelMenu:hover,
-.firstLevelMenuActive {
+.firstLevelMenuActive,
+.firstLevelMenu:hover {
 	color: var(--primary);
 }
 

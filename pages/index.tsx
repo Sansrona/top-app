@@ -8,6 +8,8 @@ import { API } from '../helpers/api';
 
 function Home({ menu }:IHome): JSX.Element {
   const [rating, setRating] = useState<number>(4);
+
+
   return (
     <>
       <Htag tag="h1">Текст</Htag>

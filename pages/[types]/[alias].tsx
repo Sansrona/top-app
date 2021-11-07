@@ -9,11 +9,16 @@ import { firstLevelCategory } from '../../helpers/helpers';
 import TopPageComponent from '../../page-components/TopPageComponent';
 import { API } from '../../helpers/api';
 import Head from 'next/head';
+import React from 'react';
+import { Error404 } from '../404';
 
 
 function TopPage({ page, products, firstCategory }: ICourse): JSX.Element {
+    if(!page || !products){
+        return <Error404 />;
+    }
+    
     return <>
-    {page && products && <>
         <Head>
         <title>{page.title}</title>
         <meta name='description' content={page.metaDescription} />
@@ -24,7 +29,7 @@ function TopPage({ page, products, firstCategory }: ICourse): JSX.Element {
     <TopPageComponent 
     firstCategory={firstCategory} 
     products={products} 
-    page={page} /></>}
+    page={page} />
     </>;
 }
 

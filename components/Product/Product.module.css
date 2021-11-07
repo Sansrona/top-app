@@ -273,7 +273,7 @@
 	}
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 4800px) {
 	.product {
 		grid-template-columns: 1fr;
 		grid-template-areas:
