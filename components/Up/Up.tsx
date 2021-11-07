@@ -1,10 +1,8 @@
-import cn from 'classnames';
 import { motion, useAnimation } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { ButtonIcon } from '..';
 import { useScrollY } from '../../hooks/useScrollY';
 import styles from './Up.module.css';
-import UpIcon from './up.svg';
 
 
 export const Up = (): JSX.Element => {

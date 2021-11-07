@@ -4,7 +4,6 @@ import { Button, Htag, P, Rating, Tag } from '../components';
 import { IMenuItems } from '../interfaces/menu.interface';
 import { withLayout } from '../layout/Layout';
 import axios from 'axios';
-import styles from '../styles/Home.module.css';
 import { API } from '../helpers/api';
 
 function Home({ menu }:IHome): JSX.Element {

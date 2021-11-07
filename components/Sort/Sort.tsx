@@ -5,14 +5,9 @@ import SortIcon from './sort.svg';
 
 
 export const Sort = ({ sort, setSort, className ,...props }: ISort): JSX.Element => {
-    const handleKey =(key:KeyboardEvent, sorting: SortEnum)=>{
-        if(key.code == 'Space' || key.code == 'Enter'){
-            setSort(sorting);
-        }
-    };
 
     return (
-        <div className={cn(styles.sort, className)}>
+        <div className={cn(styles.sort, className)} {...props}>
             <div id='sort' className={styles.sortName}>Сортировка</div>
             <button 
             id='rating'

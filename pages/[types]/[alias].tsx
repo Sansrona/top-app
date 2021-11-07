@@ -13,7 +13,8 @@ import Head from 'next/head';
 
 function TopPage({ page, products, firstCategory }: ICourse): JSX.Element {
     return <>
-    <Head>
+    {page && products && <>
+        <Head>
         <title>{page.title}</title>
         <meta name='description' content={page.metaDescription} />
         <meta property="og:title" content={page.title} />
@@ -23,7 +24,7 @@ function TopPage({ page, products, firstCategory }: ICourse): JSX.Element {
     <TopPageComponent 
     firstCategory={firstCategory} 
     products={products} 
-    page={page} />
+    page={page} /></>}
     </>;
 }
 

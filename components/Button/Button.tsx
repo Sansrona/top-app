@@ -1,5 +1,5 @@
 import { IButton } from "./Button.props";
-import styles from './Button.module.css'
+import styles from './Button.module.css';
 import cn from 'classnames';
 import Arrow from './Arrow.svg';
 
@@ -14,5 +14,5 @@ export const Button = ({children,arrow='none',appearance,className, ...props}:IB
                 [styles.down]:arrow ==='down'
             })}><Arrow/></span>}
         </button>
-    )
+    );
 };
