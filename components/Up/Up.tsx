@@ -27,6 +27,6 @@ export const Up = (): JSX.Element => {
     animate={controls}
     initial={{opacity:0}}
     className={styles.up}>
-        <ButtonIcon appearance='primary' icon='up' onClick={scrollTop}/>
+        <ButtonIcon appearance='primary' aria-label='Наверх' icon='up' onClick={scrollTop}/>
     </motion.div>);
 };
