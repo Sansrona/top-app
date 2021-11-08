@@ -3,7 +3,7 @@ import axios from 'axios';
 import { withLayout } from '../../layout/Layout';
 import { IMenuItems } from '../../interfaces/menu.interface';
 import { firstLevelCategory } from '../../helpers/helpers';
-import { ParsedUrlQuery } from 'json-schemaquerystring';
+import { ParsedUrlQuery } from 'querystring';
 import { API } from '../../helpers/api';
 
 function Type({firstCategory}:IType): JSX.Element {
