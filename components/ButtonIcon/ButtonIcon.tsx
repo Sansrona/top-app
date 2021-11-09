@@ -8,7 +8,7 @@ export const ButtonIcon = ({icon,appearance,className, ...props}:ButtonIconProps
     return (
         <button className={cn(styles.button,className, {
             [styles.primary]:appearance==='primary',
-            [styles.ghost]:appearance==='white',
+            [styles.ghost]:appearance==='white'
         })} {...props}>
             <IconComp />
         </button>

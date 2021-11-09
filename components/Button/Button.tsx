@@ -7,7 +7,7 @@ export const Button = ({children,arrow='none',appearance,className, ...props}:IB
     return (
         <button className={cn(styles.button,className, {
             [styles.primary]:appearance =='primary',
-            [styles.ghost]:appearance =='ghost',
+            [styles.ghost]:appearance =='ghost'
         })} {...props}>
             {children}
             {arrow !== 'none' && <span className={cn(styles.arrow,{
